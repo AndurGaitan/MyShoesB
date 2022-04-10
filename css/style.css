@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+ 
+/*Body home*/
+.bodyContenedor {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "header"
+                         "main"
+                         "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    gap: 10px;                       
+}
+
+.header {
+    grid-area: header;
+}
+
+.contenedorMain {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+/*Navegador general*/
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.navNombreMarca {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+
+}
+
+.color-nav {
+    background-color: #F2F4F4;
+}
+
+/*Main home*/
+.bienvenidosIndex {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.productos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 20%;
+
+}
+
+.productos article {
+    margin: 15px;    
+}
+
+.productos img {
+    width: 50%;
+    border-radius: 70px;
+}
+
+.productos img:hover {
+    transform: scale(1.4);
+}
+
+.productos img:hover {
+    transform: scale(1);
+}
+
+.marcas {
+    display: none;
+}
+
+.tituloMarcas {
+    text-align: center;
+    margin-bottom: 30px;
+    display: none;
+}
+.marcas img {
+    border-radius: 70px;
+    width: 50%;
+}
+
+
+/*Footer*/
+
+.footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: #F2F4F4;
+}
+
+.footer .seguinos {
+    margin-top: 10px;
+}
+
+.footer .seguinos p {
+    font-size: 0.8em;   
+}
+
+.footer .seguinos a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em; 
+}
+
+.footer .menu ul li {
+    list-style: none;
+}
+
+.footer .menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em; 
+
+}
+
+.footer .copy {
+    margin-top: 80px;
+    font-size: 0.8em; 
+}
+
+
+/*Main Nosotros*/
+.presentacionNosotros {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.videoVans {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+/*Main Sale*/
+.productosSale {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.bienvenidosSale h2 {
+    text-align: center;
+}
+
+.card .tachado {
+    text-decoration: line-through;
+}
+
+.card .tachado p {
+    font-size: large;
+    font-weight: bolder;
+}
+/*Main Productos*/
+
+.contenedorProductos {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: "headerC headerC"
+                         "mainProd mainProd"                      
+                         "footerProd footerProd";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto fell, 1fr);
+    justify-content: center;
+    gap: 10px;
+}
+
+.headerC {
+    grid-area: headerC;
+}
+
+.mainProd {
+    grid-area: mainProd;
+
+}
+
+.footerProd {
+    grid-area: footerProd;
+}
+.bienvenidosProd {
+    text-align: center;
+}
+
+.productosProduc {
+    width: 95vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.productosProduc img {
+    width: 100%;
+    height: 220px;
+}
+
+/*Stylo cards*/
+
+.card h2 {
+    font-size: 1em;
+}
+
+.card p {
+    font-size: 0.7em;
+}
+
+.card img {
+    width: 100%;
+    height: 290px;
+}
+
+.footerProd {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: #F2F4F4;
+}
+
+.footerProd .seguinos {
+    margin-top: 10px;
+}
+
+.footerProd .seguinos p {
+    font-size: 0.8em;   
+}
+
+.footerProd .seguinos a{
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.footerProd .menu ul li {
+    list-style: none;
+}
+
+.footerProd .menu ul li a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.footerProd .copy {
+    margin-top: 80px;
+}
+
+/*Main Contacto*/
+
+.formularioContacto {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.formularioContenedor {
+    background-image: url(../img/bgc.jpg);
+}
+
+/*media queries*/
+@media only screen and (min-width: 600px) {
+    .contenedorNav {
+        background-color: #F2F4F4;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+    .contenedorNav .menu ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 25px 5px 25px 5px ;
+        font-size: 16px;
+    }
+    .iconoMenu {
+        display: none;
+    }
+
+    .contenedorNavRes {
+        display: none;
+    }
+
+    .tituloMarcas {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .marcas {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-left: 20%;
+    }
+
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .bienvenidosIndex {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    .productos articulo1 articulo2{
+        font-size: 18px;
+    }
+
+    .marcas {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin-left: 15%;
+    }
+    .iconoMenu {
+        display: none;
+    }
+    .footer .seguinos p {
+        font-size: 18px;   
+    }
+    
+
+    .footer .menu ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1em; 
+    
+    }
+    
+    .footer .copy {
+        margin-top: 80px;
+        font-size: 1em; 
+    }
+
+    .footer .seguinos a{
+        font-size: 1em;
+    }
+    
+
+    .footerProd .seguinos p {
+        font-size: 1em;   
+    }
+
+    .footerProd .seguinos a{
+        font-size: 1.1em;
+
+    }
+
+    .footerProd .menu ul li a {
+        text-decoration: none;
+        color: black;
+        font-size: 1em; 
+    
+    }
+    
+    .footerProd .copy {
+        margin-top: 80px;
+        font-size: 18px; 
+    }
+}
+
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.navNombreMarca {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+
+}
+
+.color-nav {
+    background-color: #F2F4F4;
+}
+
