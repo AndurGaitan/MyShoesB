@@ -142,6 +142,10 @@
     margin-top: 15px;
 }
 
+.presentacionNosotros img{
+    text-align: center;
+}
+
 /*Main Sale*/
 .productosSale {
     display: flex;
