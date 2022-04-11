@@ -173,7 +173,7 @@
     display: grid;
     grid-template-areas: "headerC headerC"
                          "mainProd mainProd"                      
-                         "footerProd footerProd";
+                         "footer footer";
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto fell, 1fr);
     justify-content: center;
@@ -189,8 +189,8 @@
 
 }
 
-.footerProd {
-    grid-area: footerProd;
+.footer {
+    grid-area: footer;
 }
 .bienvenidosProd {
     text-align: center;
@@ -223,51 +223,8 @@
     height: 290px;
 }
 
-.footerProd {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    background-color: #F2F4F4;
-}
-
-.footerProd .seguinos {
-    margin-top: 10px;
-}
-
-.footerProd .seguinos p {
-    font-size: 0.8em;   
-}
-
-.footerProd .seguinos a{
-    display: block;
-    text-decoration: none;
-    color: black;
-}
-
-.footerProd .menu ul li {
-    list-style: none;
-}
-
-.footerProd .menu ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 0.8em;
-
-
-}
-
-.footerProd .copy {
-    margin-top: 80px;
-    font-size: 0.8em;
-}
 
 /*Main Contacto*/
-
-.formularioContacto {
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
 
 .formularioContenedor {
     background-image: url(../img/bgc.jpg);
@@ -275,25 +232,6 @@
 
 /*media queries*/
 @media only screen and (min-width: 600px) {
-    .contenedorNav {
-        background-color: #F2F4F4;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
-    }
-    .contenedorNav .menu ul li {
-        list-style: none;
-        display: inline-block;
-        margin: 25px 5px 25px 5px ;
-        font-size: 16px;
-    }
-    .iconoMenu {
-        display: none;
-    }
-
-    .contenedorNavRes {
-        display: none;
-    }
 
     .tituloMarcas {
         text-align: center;
@@ -327,9 +265,7 @@
         justify-content: space-between;
         margin-left: 15%;
     }
-    .iconoMenu {
-        display: none;
-    }
+
     .footer .seguinos p {
         font-size: 18px;   
     }
@@ -350,30 +286,9 @@
     .footer .seguinos a{
         font-size: 1em;
     }
-    
-
-    .footerProd .seguinos p {
-        font-size: 1em;   
-    }
-
-    .footerProd .seguinos a{
-        font-size: 1.1em;
-
-    }
-
-    .footerProd .menu ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 1em; 
-    
-    }
-    
-    .footerProd .copy {
-        margin-top: 80px;
-        font-size: 18px; 
-    }
 }
 
+/*Nav NUEVO*/
 
 .navbar-brand img {
     width: 60px;
