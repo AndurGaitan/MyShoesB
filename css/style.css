@@ -75,10 +75,6 @@
     transform: scale(1.4);
 }
 
-.productos img:hover {
-    transform: scale(1);
-}
-
 .marcas {
     display: none;
 }
@@ -225,9 +221,6 @@
 
 /*Main Contacto*/
 
-.formularioContenedor {
-    background-image: url(../img/bgc.jpg);
-}
 
 /*media queries*/
 @media only screen and (min-width: 600px) {
@@ -304,3 +297,8 @@
     background-color: #F2F4F4;
 }
 
+.btn-novo {
+    color: #fff;
+    background-color: #7DCEA0;
+    border-color: #7DCEA0;
+}
