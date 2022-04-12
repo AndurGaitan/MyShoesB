@@ -134,12 +134,11 @@
 /*Main Nosotros*/
 .presentacionNosotros {
     text-align: center;
-    font-size: 18px;
-    margin-top: 15px;
+    font-size: 1em;
 }
 
-.presentacionNosotros img{
-    text-align: center;
+.fotoFriends img {
+    border-radius: 30px;
 }
 
 /*Main Sale*/
