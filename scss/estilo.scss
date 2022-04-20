@@ -1,4 +1,3 @@
-/*
 * {
     margin: 0;
     padding: 0;
@@ -6,8 +5,14 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
- 
-/*Body home
+
+//Variables
+$color-menu: #F2F4F4;
+$dimension-chica: 0.8em;
+
+
+//Body home
+/*Body home*/
 .bodyContenedor {
     height: 100vh;
     display: grid;
@@ -32,21 +37,23 @@
     grid-area: footer;
 }
 
-/*Navegador general
+//Nav Gral
+/*Navegador general*/
 
 .navbar-brand img {
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
 }
 
 .color-nav {
-    background-color: #F2F4F4;
+    background-color: $color-menu;
 }
 
-/*Main home
+//Main home
+/*Main home*/
 .bienvenidosIndex {
     text-align: center;
-    font-size: 0.9em;
+    font-size: $dimension-chica;
 }
 
 .productos {
@@ -54,24 +61,25 @@
     flex-direction: row;
     justify-content: space-between;
     margin-left: 20%;
+    .article {
+        margin: 15px;
+    }
+    .img {
+        width: 50%;
+        border-radius: 70px;
+        &:hover {
+            transform: scale(1.4);
+        }
+    }
 
-}
-
-.productos article {
-    margin: 15px;    
-}
-
-.productos img {
-    width: 50%;
-    border-radius: 70px;
-}
-
-.productos img:hover {
-    transform: scale(1.4);
 }
 
 .marcas {
     display: none;
+    img {
+        border-radius: 70px;
+        width: 50%;
+    }
 }
 
 .tituloMarcas {
@@ -79,54 +87,47 @@
     margin-bottom: 30px;
     display: none;
 }
-.marcas img {
-    border-radius: 70px;
-    width: 50%;
-}
 
-
-/*Footer
+//Footer
+/*Footer*/
 
 .footer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    background-color: #F2F4F4;
+    background-color: $color-menu;
+    .seguinos {
+        margin-top: 10px;
+        p {
+            font-size: $dimension-chica;
+        }
+        a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            font-size: $dimension-chica;
+        }
+    }
+    .menu {
+        ul {
+            li {
+                list-style: none;
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: $dimension-chica;
+                }
+            }
+        }
+    }
+    .copy {
+        margin-top: 80px;
+        font-size: $dimension-chica;
+    }
 }
 
-.footer .seguinos {
-    margin-top: 10px;
-}
-
-.footer .seguinos p {
-    font-size: 0.8em;   
-}
-
-.footer .seguinos a{
-    display: block;
-    text-decoration: none;
-    color: black;
-    font-size: 0.8em; 
-}
-
-.footer .menu ul li {
-    list-style: none;
-}
-
-.footer .menu ul li a {
-    text-decoration: none;
-    color: black;
-    font-size: 0.8em; 
-
-}
-
-.footer .copy {
-    margin-top: 80px;
-    font-size: 0.8em; 
-}
-
-
-/*Main Nosotros
+//Main Nosotros
+/*Main Nosotros*/
 .presentacionNosotros {
     text-align: center;
     font-size: 1em;
@@ -136,26 +137,33 @@
     border-radius: 30px;
 }
 
-/*Main Sale
+//Main Sale
+/*Main Sale*/
 .productosSale {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-.bienvenidosSale h2 {
-    text-align: center;
+.bienvenidosSale {
+    h2 {
+        text-align: center;
+    }
 }
 
-.card .tachado {
-    text-decoration: line-through;
+
+.card {
+    .tachado {
+        text-decoration: line-through;
+        p {
+            font-size: large;
+            font-weight: bolder;
+        }
+    }
 }
 
-.card .tachado p {
-    font-size: large;
-    font-weight: bolder;
-}
-/*Main Productos
+//Main productos
+/*Main Productos*/
 
 .contenedorProductos {
     height: 100vh;
@@ -190,29 +198,28 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    img {
+        width: 100%;
+        height: 220px;
+    }
 }
+//Estilo cards
+/*Stylo cards*/
 
-.productosProduc img {
-    width: 100%;
-    height: 220px;
-}
+.card {
+    h2 {
+        font-size: 1em;
+    }
+    p {
+        font-size: 0.7em;
+    }
+    img {
+        width: 100%;
+        height: 290px;
+    }
 
-/*Stylo cards
-
-.card h2 {
-    font-size: 1em;
-}
-
-.card p {
-    font-size: 0.7em;
-}
-
-.card img {
-    width: 100%;
-    height: 290px;
-}
-
-/*media queries
+//Media queries
+/*media queries*/
 @media only screen and (min-width: 600px) {
 
     .tituloMarcas {
@@ -226,8 +233,6 @@
         justify-content: space-between;
         margin-left: 20%;
     }
-
-
 }
 
 
@@ -248,30 +253,40 @@
         margin-left: 15%;
     }
 
-    .footer .seguinos p {
-        font-size: 18px;   
-    }
-    
-
-    .footer .menu ul li a {
-        text-decoration: none;
-        color: black;
-        font-size: 1em; 
-    
-    }
-    
-    .footer .copy {
-        margin-top: 80px;
-        font-size: 1em; 
-    }
-
-    .footer .seguinos a{
-        font-size: 1em;
-    }
+    .footer {
+        .seguinos {
+            p {
+                font-size: 18px;
+            }
+        }
+        .menu {
+            ul {
+                li {
+                    a {
+                        text-decoration: none;
+                        color: black;
+                        font-size: 1em; 
+                    }
+                }
+            }
+        }
+        .copy {
+            margin-top: 80px;
+            font-size: 1em;
+        }
+        .seguinos {
+            a {
+                font-size: 1em;
+            }
+        }
 }
+
+//Stylo botones cards
+/*Stylo botones cards*/
 
 .btn-Novo {
     color: #fff;
     background: #C1FF31;
     border-color: #C1FF31;
+
 }
