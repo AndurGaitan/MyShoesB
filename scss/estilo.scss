@@ -64,7 +64,7 @@ $dimension-chica: 0.8em;
     .article {
         margin: 15px;
     }
-    .img {
+    img {
         width: 50%;
         border-radius: 70px;
         &:hover {
@@ -217,6 +217,17 @@ $dimension-chica: 0.8em;
         width: 100%;
         height: 290px;
     }
+}
+
+//Stylo botones cards
+/*Stylo botones cards*/
+
+.btn-Novo {
+    color: #fff;
+    background: #C1FF31;
+    border-color: #C1FF31;
+
+}
 
 //Media queries
 /*media queries*/
@@ -242,8 +253,13 @@ $dimension-chica: 0.8em;
         font-size: 20px;
     }
 
-    .productos articulo1 articulo2{
-        font-size: 18px;
+    .productos {
+        articulo1 {
+            font-size: 18px;
+        }
+        articulo2 {
+            font-size: 18px;
+        }    
     }
 
     .marcas {
@@ -279,14 +295,6 @@ $dimension-chica: 0.8em;
                 font-size: 1em;
             }
         }
+    }
 }
 
-//Stylo botones cards
-/*Stylo botones cards*/
-
-.btn-Novo {
-    color: #fff;
-    background: #C1FF31;
-    border-color: #C1FF31;
-
-}
