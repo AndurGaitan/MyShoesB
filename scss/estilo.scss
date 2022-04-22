@@ -127,6 +127,9 @@
 .presentacionNosotros {
     text-align: center;
     font-size: 1em;
+    p {
+        font-size: $dimension-chica;
+    }
 }
 
 .fotoFriends img {
