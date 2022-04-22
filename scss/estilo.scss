@@ -6,10 +6,7 @@
     box-sizing: border-box;
 }
 
-//Variables
-$color-menu: #F2F4F4;
-$dimension-chica: 0.8em;
-
+@import url(utilities/_variables.scss);
 
 //Body home
 /*Body home*/
@@ -21,8 +18,7 @@ $dimension-chica: 0.8em;
                          "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    justify-content: center;
-    gap: 10px;                       
+    justify-content: center;                    
 }
 
 .header {

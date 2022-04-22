@@ -7,13 +7,15 @@
 
 /*Body home*/
 .bodyContenedor {
-  height: 100vh;
+  
   display: grid;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header"
+ "main"
+ "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
-  gap: 10px; }
+}
 
 .header {
   grid-area: header; }
@@ -113,7 +115,9 @@
 .contenedorProductos {
   height: 100vh;
   display: grid;
-  grid-template-areas: "headerC headerC" "mainProd mainProd"                       "footer footer";
+  grid-template-areas: "headerC headerC"
+ "mainProd mainProd"                      
+ "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto fell, 1fr);
   justify-content: center;
