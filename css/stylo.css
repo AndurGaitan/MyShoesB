@@ -23,7 +23,9 @@
 .bodyContenedor {
   height: 100vh;
   display: grid;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header"
+ "main"
+ "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center; }
@@ -98,7 +100,10 @@
   text-align: center;
   font-size: 1em; }
   .presentacionNosotros p {
-    font-size: 0.6em; }
+    font-size: 0.6em;
+    margin-left: 150px;
+    margin-right: 150px;
+   }
 
 .fotoFriends img {
   border-radius: 30px; }
@@ -122,7 +127,9 @@
 .contenedorProductos {
   height: 100vh;
   display: grid;
-  grid-template-areas: "headerC headerC" "mainProd mainProd"                       "footer footer";
+  grid-template-areas: "headerC headerC"
+ "mainProd mainProd"                      
+ "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto fell, 1fr);
   justify-content: center;
