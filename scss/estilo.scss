@@ -12,7 +12,6 @@
 //Body home
 /*Body home*/
 .bodyContenedor {
-    height: 100vh;
     display: grid;
     grid-template-areas: "header"
                          "main"
@@ -51,6 +50,7 @@
 .bienvenidosIndex {
     text-align: center;
     font-size: $dimension-chica;
+    margin: 10px 0px 50px 0px;
 }
 
 .productos {
@@ -63,11 +63,11 @@
     }
     img {
         @extend %imagen;
+        margin: 10px 0px 10px 0px;
         &:hover {
-            transform: scale(1.4);
+            transform: scale(1.2);
         }
     }
-
 }
 
 .marcas {
@@ -125,7 +125,7 @@
 /*Main Nosotros*/
 .presentacionNosotros {
     text-align: center;
-    font-size: 1em;
+    font-size: 0.8em;
     p {
         font-size: $dimension-chica;
     }
@@ -254,10 +254,18 @@
         margin-left: 15%;
     }
 
+    .presentacionNosotros {
+        font-size: 1em;
+        p {
+            font-size: 1em;
+            margin: 5px 170px 5px 170px;
+        }
+    }
+
     .footer {
         .seguinos {
             p {
-                font-size: 18px;
+                font-size: 1em;
             }
         }
         .menu {

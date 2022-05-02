@@ -21,11 +21,8 @@
 
 /*Body home*/
 .bodyContenedor {
-  height: 100vh;
   display: grid;
-  grid-template-areas: "header"
- "main"
- "footer";
+  grid-template-areas: "header" "main" "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center; }
@@ -50,7 +47,8 @@
 /*Main home*/
 .bienvenidosIndex {
   text-align: center;
-  font-size: 0.6em; }
+  font-size: 0.6em;
+  margin: 10px 0px 50px 0px; }
 
 .productos {
   display: flex;
@@ -59,8 +57,10 @@
   margin-left: 20%; }
   .productos .article {
     margin: 15px; }
-  .productos img:hover {
-    transform: scale(1.4); }
+  .productos img {
+    margin: 10px 0px 10px 0px; }
+    .productos img:hover {
+      transform: scale(1.2); }
 
 .marcas {
   display: none; }
@@ -98,12 +98,9 @@
 /*Main Nosotros*/
 .presentacionNosotros {
   text-align: center;
-  font-size: 1em; }
+  font-size: 0.8em; }
   .presentacionNosotros p {
-    font-size: 0.6em;
-    margin-left: 150px;
-    margin-right: 150px;
-   }
+    font-size: 0.6em; }
 
 .fotoFriends img {
   border-radius: 30px; }
@@ -127,9 +124,7 @@
 .contenedorProductos {
   height: 100vh;
   display: grid;
-  grid-template-areas: "headerC headerC"
- "mainProd mainProd"                      
- "footer footer";
+  grid-template-areas: "headerC headerC" "mainProd mainProd"                       "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto fell, 1fr);
   justify-content: center;
@@ -191,8 +186,13 @@
     flex-flow: row wrap;
     justify-content: space-between;
     margin-left: 15%; }
+  .presentacionNosotros {
+    font-size: 1em; }
+    .presentacionNosotros p {
+      font-size: 1em;
+      margin: 5px 170px 5px 170px; }
   .footer .seguinos p {
-    font-size: 18px; }
+    font-size: 1em; }
   .footer .menu ul li a {
     text-decoration: none;
     color: black;
