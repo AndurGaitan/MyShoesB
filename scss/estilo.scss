@@ -18,7 +18,7 @@
                          "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    justify-content: center;                    
+    justify-content: center;                  
 }
 
 .header {
@@ -52,24 +52,27 @@
     font-size: $dimension-chica;
     margin: 10px 0px 50px 0px;
 }
-
-.productos {
+.todoProducto {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    margin-left: 20%;
-    .article {
+    justify-content: center;
+    h3 {
+        text-align: center;
+    }
+    .card {
+        border-style: none;
         margin: 15px;
     }
     img {
-        @extend %imagen;
-        margin: 10px 0px 10px 0px;
         &:hover {
             transform: scale(1.2);
         }
     }
 }
-
+.tituloProductos {
+    text-align: center;
+    margin: 15px 0px 15px 0px;
+}
 .marcas {
     display: none;
     img {
@@ -79,8 +82,7 @@
 
 .tituloMarcas {
     text-align: center;
-    margin-bottom: 30px;
-    display: none;
+    margin: 15px 0px 15px 0px;
 }
 
 //Footer
