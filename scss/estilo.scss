@@ -9,6 +9,20 @@
 @import "utilities/_variables.scss";
 @import "utilities/_mapas.scss";
 
+
+
+//Nav Gral
+/*Navegador general*/
+
+.navbar-brand img {
+    width: 60px;
+    height: 60px;
+}
+
+.color-nav {
+    background-color: $color-menu;
+}
+
 //Body home
 /*Body home*/
 .bodyContenedor {
@@ -33,18 +47,6 @@
     grid-area: footer;
 }
 
-//Nav Gral
-/*Navegador general*/
-
-.navbar-brand img {
-    width: 60px;
-    height: 60px;
-}
-
-.color-nav {
-    background-color: $color-menu;
-}
-
 //Main home
 /*Main home*/
 .bienvenidosIndex {
@@ -52,16 +54,18 @@
     font-size: $dimension-chica;
     margin: 10px 0px 50px 0px;
 }
+
 .todoProducto {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    h3 {
-        text-align: center;
-    }
+    align-self: center;
     .card {
         border-style: none;
-        margin: 15px;
+        margin: 5px 7px 5px 70px;
+    }
+    h3 {
+        text-align: center;
     }
     img {
         &:hover {
@@ -69,6 +73,8 @@
         }
     }
 }
+
+
 .tituloProductos {
     text-align: center;
     margin: 15px 0px 15px 0px;
@@ -81,8 +87,7 @@
 }
 
 .tituloMarcas {
-    text-align: center;
-    margin: 15px 0px 15px 0px;
+    display: none;
 }
 
 //Footer
@@ -122,6 +127,8 @@
         font-size: $dimension-chica;
     }
 }
+
+
 
 //Main Nosotros
 /*Main Nosotros*/
@@ -221,6 +228,7 @@
 @media only screen and (min-width: 600px) {
 
     .tituloMarcas {
+        display: block;
         text-align: center;
         margin-bottom: 30px;
     }
@@ -231,6 +239,18 @@
         justify-content: space-between;
         margin-left: 20%;
     }
+
+    .tituloMarcas {
+        text-align: center;
+        margin: 15px 0px 15px 0px;
+    }
+
+    .todoProducto {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+    }
 }
 
 
@@ -240,13 +260,10 @@
         font-size: 20px;
     }
 
-    .productos {
-        articulo1 {
-            font-size: 18px;
-        }
-        articulo2 {
-            font-size: 18px;
-        }    
+    .tituloMarcas {
+        display: block;
+        text-align: center;
+        margin: 15px 0px 15px 0px;
     }
 
     .marcas {

@@ -19,6 +19,14 @@
   background-color: #9CCE28;
   border-color: #9CCE28; }
 
+/*Navegador general*/
+.navbar-brand img {
+  width: 60px;
+  height: 60px; }
+
+.color-nav {
+  background-color: #F2F4F4; }
+
 /*Body home*/
 .bodyContenedor {
   display: grid;
@@ -36,14 +44,6 @@
 .footer {
   grid-area: footer; }
 
-/*Navegador general*/
-.navbar-brand img {
-  width: 60px;
-  height: 60px; }
-
-.color-nav {
-  background-color: #F2F4F4; }
-
 /*Main home*/
 .bienvenidosIndex {
   text-align: center;
@@ -52,13 +52,14 @@
 
 .todoProducto {
   display: flex;
-  flex-direction: row;
-  justify-content: center; }
-  .todoProducto h3 {
-    text-align: center; }
+  flex-direction: column;
+  justify-content: center;
+  align-self: center; }
   .todoProducto .card {
     border-style: none;
-    margin: 15px; }
+    margin: 5px 7px 5px 70px; }
+  .todoProducto h3 {
+    text-align: center; }
   .todoProducto img:hover {
     transform: scale(1.2); }
 
@@ -70,8 +71,7 @@
   display: none; }
 
 .tituloMarcas {
-  text-align: center;
-  margin: 15px 0px 15px 0px; }
+  display: none; }
 
 /*Footer*/
 .footer {
@@ -168,22 +168,31 @@
 /*media queries*/
 @media only screen and (min-width: 600px) {
   .tituloMarcas {
+    display: block;
     text-align: center;
     margin-bottom: 30px; }
   .marcas {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-left: 20%; } }
+    margin-left: 20%; }
+  .tituloMarcas {
+    text-align: center;
+    margin: 15px 0px 15px 0px; }
+  .todoProducto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center; } }
 
 @media only screen and (min-width: 1024px) {
   .bienvenidosIndex {
     text-align: center;
     font-size: 20px; }
-  .productos articulo1 {
-    font-size: 18px; }
-  .productos articulo2 {
-    font-size: 18px; }
+  .tituloMarcas {
+    display: block;
+    text-align: center;
+    margin: 15px 0px 15px 0px; }
   .marcas {
     display: flex;
     flex-flow: row wrap;
