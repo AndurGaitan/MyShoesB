@@ -1,2 +1,2 @@
 # MyShoesB
-My Shoes es una pagina web creada con el fin de que el usuario pueda tener una buena experiencia navegando en busqueda de zapatillas con un estilo moderno y con accesibles financiaciones. Surge de la necesidad de poder acceder a muchas opciones de zapatillas de manera online.
+My Shoes es una pagina web creada con el fin de que el usuario pueda obtener zapatillas con estilo moderno y accesibles financiaciones a treves de una buena experiencia navegando entre una amplia variedad de productos.
