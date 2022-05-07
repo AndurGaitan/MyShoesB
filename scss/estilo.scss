@@ -325,6 +325,7 @@
         flex-flow: row wrap;
         justify-content: space-between;
         margin-left: 15%;
+        margin-bottom: 50px;
     }
 
     .todoProducto {
@@ -333,7 +334,11 @@
         justify-content: center;
         .card {
             border-style: none;
-            margin: 5px 7px 5px 7px;
+            margin: 8px 10px 8px 10px;
+        }
+        h3 {
+            text-align: center;
+            margin: 0px 0px 20px 0px;
         }
     }
 
@@ -349,6 +354,7 @@
         .seguinos {
             p {
                 font-size: 1em;
+                margin-bottom: 0px;
             }
         }
         .menu {
@@ -357,18 +363,19 @@
                     a {
                         text-decoration: none;
                         color: black;
-                        font-size: 1em; 
+                        font-size: 1em;
+                        margin-top: 10px; 
                     }
                 }
             }
         }
         .copy {
-            margin-top: 80px;
+            margin-top: 90px;
             font-size: 1em;
         }
         .seguinos {
             a {
-                font-size: 1em;
+                font-size: 1.2em;
             }
         }
     }

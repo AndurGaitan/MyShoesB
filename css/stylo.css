@@ -229,27 +229,33 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-left: 15%; }
+    margin-left: 15%;
+    margin-bottom: 50px; }
   .todoProducto {
     display: flex;
     flex-direction: row;
     justify-content: center; }
     .todoProducto .card {
       border-style: none;
-      margin: 5px 7px 5px 7px; }
+      margin: 8px 10px 8px 10px; }
+    .todoProducto h3 {
+      text-align: center;
+      margin: 0px 0px 20px 0px; }
   .presentacionNosotros {
     font-size: 1em; }
     .presentacionNosotros p {
       font-size: 1em;
       margin: 5px 170px 5px 170px; }
   .footer .seguinos p {
-    font-size: 1em; }
+    font-size: 1em;
+    margin-bottom: 0px; }
   .footer .menu ul li a {
     text-decoration: none;
     color: black;
-    font-size: 1em; }
+    font-size: 1em;
+    margin-top: 10px; }
   .footer .copy {
-    margin-top: 80px;
+    margin-top: 90px;
     font-size: 1em; }
   .footer .seguinos a {
-    font-size: 1em; } }
+    font-size: 1.2em; } }
