@@ -170,27 +170,54 @@
   .tituloMarcas {
     display: block;
     text-align: center;
-    margin-bottom: 30px; }
+    margin: 15px 0px 15px 0px; }
   .marcas {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     margin-left: 20%; }
-  .tituloMarcas {
-    text-align: center;
-    margin: 15px 0px 15px 0px; }
   .todoProducto {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-content: center; }
+    .todoProducto .card {
+      border-style: none;
+      margin: 5px 7px 5px 150px; }
   .presentacionNosotros {
-    font-size: 1em; }
+    font-size: 0.8em; }
     .presentacionNosotros p {
-      font-size: 1em;
-      margin: 5px 170px 5px 170px; } }
+      font-size: 0.8em;
+      margin: 5px 80px 5px 80px; } }
+
+@media only screen and (min-width: 770px) {
+  .todoProducto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center; }
+    .todoProducto .card {
+      border-style: none;
+      margin: 5px 7px 5px 250px; }
+  .footer .seguinos p {
+    font-size: 0.8em; }
+  .footer .menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.8em; }
+  .footer .copy {
+    margin-top: 80px;
+    font-size: 0.8em; }
+  .footer .seguinos a {
+    font-size: 0.8em; } }
 
 @media only screen and (min-width: 1024px) {
+  .bodyContenedor {
+    display: grid;
+    grid-template-areas: "header header header" "main main main" "footer footer footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr fr;
+    justify-content: center; }
   .bienvenidosIndex {
     text-align: center;
     font-size: 20px; }
@@ -203,6 +230,13 @@
     flex-flow: row wrap;
     justify-content: space-between;
     margin-left: 15%; }
+  .todoProducto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+    .todoProducto .card {
+      border-style: none;
+      margin: 5px 7px 5px 7px; }
   .presentacionNosotros {
     font-size: 1em; }
     .presentacionNosotros p {
