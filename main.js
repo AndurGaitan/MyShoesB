@@ -1,53 +1,64 @@
-document.addEventListener('DOMContentLoaded', function() {
-let nike = 6000
-let adidas = 7000
-let puma = 8000
-let vans = 9000
-let totalAPagar = 0
-let zapatillaSeleccionada  
-let ciclico = true
-let accion 
-let carrito = []
+document.addEventListener('DOMContentLoaded', function() { 
+    //Variables
+    const productos = [
+        {nombre:'nike',sexo:'masculino',precio:6000},
+        {nombre:'adidas',sexo:'masculino',precio:7000},
+        {nombre:'puma',sexo:'femenino',precio:8000},
+        {nombre:'vans',sexo:'masculino',precio:9000},
+    ]
+    let totalAPagar = 0
+    let zapatillaSeleccionada
+    let accion
+    let carrito = []
 
-function seleccionZapatilla(){
-    zapatillaSeleccionada = prompt('Ingrese el nombre de la zapatilla que quieres agregar al carrito \n nike $6000 (1) \n adidas $7000 (2) \n puma $8000 (3) \n vans $9000 (4)')
-    carrito.push(zapatillaSeleccionada);
-    if(zapatillaSeleccionada == 'nike'){
-        totalAPagar = totalAPagar + nike
-        alert(`Seleccionaste zapatilla ${zapatillaSeleccionada} el total de tu cuenta en este momento es ${totalAPagar} pesos`)
-    }else if(zapatillaSeleccionada == 'adidas'){
-        totalAPagar = totalAPagar + adidas
-        alert(`Seleccionaste zapatilla ${zapatillaSeleccionada} el total de tu cuenta en este momento es ${totalAPagar} pesos`)
-    }else if(zapatillaSeleccionada == 'puma'){
-        totalAPagar = totalAPagar + puma
-        alert(`Seleccionaste zapatilla ${zapatillaSeleccionada} el total de tu cuenta en este momento es ${totalAPagar} pesos`)
-    }else if(zapatillaSeleccionada == 'vans'){
-        totalAPagar = totalAPagar + vans
-        alert(`Seleccionaste zapatilla ${zapatillaSeleccionada} el total de tu cuenta en este momento es ${totalAPagar} pesos`)    
-    }else{
-        alert('No seleccionaste ninguna zapatilla')
+    //Funcion seleccion de zapatillas 
+    function seleccionZapatilla(){
+        zapatillaSeleccionada = prompt('Ingrese la marca de la zapatilla que quieres agregar al carrito \n Zapatilla nike - costo $6000 (nike) \nZapatilla adidas - costo $7000 (adidas) \nZapatilla puma - costo $8000 (puma) \nZapatilla vans - costo $9000 (vans)').toLowerCase()
+        if (zapatillaSeleccionada == 'nike'){
+            let zapatillaSeleccionada1 = productos.find((el)=> el.nombre === 'nike')
+            carrito.push(zapatillaSeleccionada1)
+        }else if (zapatillaSeleccionada == 'adidas'){
+            let zapatillaSeleccionada2 = productos.find((el)=> el.nombre === 'adidas')
+            carrito.push(zapatillaSeleccionada2)
+        }else if (zapatillaSeleccionada == 'puma'){
+            let zapatillaSeleccionada3 = productos.find((el)=> el.nombre === 'puma')
+            carrito.push(zapatillaSeleccionada3)
+        }else if (zapatillaSeleccionada == 'vans'){
+            let zapatillaSeleccionada4 = productos.find((el)=> el.nombre === 'vans')
+            carrito.push(zapatillaSeleccionada4)
+        }else{
+            alert('No seleccionaste ninguna zapatilla')
+        }
     }
-}
 
-function verCarrito(){
-    alert(`En su carrito hay: \nZapatilla ${carrito.join('\nZapatilla ')}`)  
-}
+    //Funcion ver el carrito de compras
+    function verCarrito() {
+        const verCarrito = carrito.map((el)=> el.nombre)
+        alert(`Lo que tienes en tu carrito es: \nZapatilla ${verCarrito.join('\nZapatilla ')}`)
+    }
 
+    //Funcion calcular total del carrito de compras
+    function calculoTotal(){
+    totalAPagar = carrito.reduce((acc, el)=> acc + el.precio, 0)
+    alert(`El total a pagar es de ${totalAPagar} pesos`)
+    }
+    
+    //Ejecucion
+    
+    alert('Bienvenido a MyShoes\n Para comenzar a comprar hace click en "aceptar"' );
 
-alert('Bienvenido a MyShoes\n Para comenzar a comprar hace click en "aceptar"' );
-
-do{    
-    accion = prompt('Escriba la opcion deseada:\n "comprar" para ver las opciones de zapatillas\n "carrito" si desea ver su carrito de compras\n "total" para ver el total a pagar de su cuenta \n"salir" para dejar de comprar').toLowerCase()
-    if(accion == 'comprar'){
-        seleccionZapatilla();
-    }else if(accion == 'total'){
-        alert('El total a pagar de su cuenta es: ' + totalAPagar)
-    }else if(accion == 'carrito'){
-        verCarrito(); 
-    }else{
+    do{    
+        accion = prompt('Escriba la opcion deseada:\n "comprar" para ver las opciones de zapatillas\n "carrito" si desea ver su carrito de compras\n "total" para ver el total a pagar de su cuenta \n"salir" para dejar de comprar').toLowerCase()
+        if(accion == 'comprar'){
+            seleccionZapatilla();
+        }else if(accion == 'carrito'){
+            verCarrito(); 
+        }else if(accion == 'total'){
+            calculoTotal();
+        }else{
+            alert('Muchas gracias por comprar en MyShoes')
+        }
+    }while(accion != 'salir'){
         alert('Muchas gracias por comprar en MyShoes')
     }
-}while(accion != 'salir'){
-    alert('Muchas gracias por comprar en MyShoes')
-}
 })
