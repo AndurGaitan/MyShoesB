@@ -22,8 +22,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!--Link de css-->
     <link rel="stylesheet" href="../css/stylo.css">
+    <script src="carrito.js"></script>
 </head>
-<body>
+<body class="tBody">
 <div class="contenedorProductos">
     <!--Inicio Header-->
     <header class="headerC">
@@ -73,69 +74,81 @@
             <article>
                 <h1 class="animate__animated animate__bounce">Nuestros Productos</h1>
             </article>
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Carrito</button>
+
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Tu carrito de compras</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Aqui se van a encontrar las zapatillas compradas.</p>
+          </div>
+
+        </div>
         <section class="productosProduc mt-3 mb-3">
             <div class="card" style="width: 18rem;">
                 <img src="../img/Zapatilla Superstar.jpg" class="card-img-top" alt="ZapatillasAdidas">
                 <div class="card-body">
                   <h2 class="card-title">Zapatilla Superstar</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$11000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillasVansOldSkool.jpg" class="card-img-top" alt="zapatillasVans">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas Vans Old Skool</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$10000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillasNikeCraterImpact.jpg" class="card-img-top" alt="ZapatillasNikeCraterImpact">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas Nike Crater Impact</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$9000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/Zapatillas Nike Air Huarache.jpg" class="card-img-top" alt="ZapaatillasNike">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas Nike Air Huarache</h2>
-                  <p class="card-text"></p>>$0000</p>>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$8000</p>>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillaVansU.jpg" class="card-img-top" alt="ZapaatillasVansU">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas Vans M</h2>
-                  <p class="card-text"></p>>$0000</p>>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$7000</p>>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillaNikeAirMax.jpg" class="card-img-top" alt="ZapatillasNikeAirMaxPre-DayNn">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas Nike Air Max Pre</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$6000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillasadidasNmd.jpg" class="card-img-top" alt="Zapatillas adidas Nmd">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas adidas Nmd</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$5000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
             <div class="card" style="width: 18rem;">
                 <img src="../img/ZapatillasadidasSuperstarN.jpg" class="card-img-top" alt="Zapatillas adidas Superstar">
                 <div class="card-body">
                   <h2 class="card-title">Zapatillas adidas Superstar</h2>
-                  <p class="card-text"></p>>$0000</p>
-                  <a href="#" class="btn btn-Novo">Agregar al carrito</a>
+                  <p class="card-text precio">$4000</p>
+                  <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                 </div>
             </div>
         </section>
@@ -182,6 +195,7 @@
 </div>
 <!--Fin Footer-->
 <!--Link JS-->
+<script src="../main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

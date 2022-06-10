@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() { 
-    //Variables
+   //Variables
     const productos = [
         {nombre:'nike',sexo:'masculino',precio:6000},
         {nombre:'adidas',sexo:'masculino',precio:7000},
@@ -10,6 +9,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let zapatillaSeleccionada
     let accion
     let carrito = []
+    const clickbutton = document.querySelectorAll('.button');
+
+    //Funcion de interaccion
+    clickbutton.forEach(btn => {
+        btn.addEventListener('click',addToCarritoItem)
+    })
+    //Funcion de agregar al carrito
+    function addToCarritoItem(e){
+        const button = e.target
+        const item = button.closest('.card')
+        const itemTitle = item.querySelector('.card-title').textContent;
+        const itemPrice = item.querySelector('.precio').textContent;
+        alert(`Has seleccionado las ${itemTitle} con un valor de ${itemPrice}`)
+     }
 
     //Funcion seleccion de zapatillas 
     function seleccionZapatilla(){
@@ -61,4 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }while(accion != 'salir'){
         alert('Muchas gracias por comprar en MyShoes')
     }
-})
+
