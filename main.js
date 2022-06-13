@@ -10,24 +10,80 @@
     let accion
     let carrito = []
     const clickbutton = document.querySelectorAll('.button');
+    const tBody = document.querySelector('.tBody');
 
     //Funcion de interaccion
     clickbutton.forEach(btn => {
         btn.addEventListener('click',addToCarritoItem)
     })
+
     //Funcion de agregar al carrito
     function addToCarritoItem(e){
         const button = e.target
         const item = button.closest('.card')
         const itemTitle = item.querySelector('.card-title').textContent;
         const itemPrice = item.querySelector('.precio').textContent;
-        alert(`Has seleccionado las ${itemTitle} con un valor de ${itemPrice}`)
-     }
+        const itemImg = item.querySelector('.card-img-top').src;
 
+       
+        const newItem = {
+           title: itemTitle,
+           precio: itemPrice,
+           img: itemImg,
+           cantidad: 1,
+        }
+
+        addItemCarrito(newItem);
+    }
+
+    function addItemCarrito(newItem){
+    carrito.push(newItem)
+    renderCarrito()
+}
+
+let destino = document.getElementById('contenedorNov')
+function renderCarrito(){
+    tBody.innerHTML = ''
+    carrito.map(item =>{
+        const tr = document.createElement('tr')
+        tr.classList.add('itemCarrito')
+        const Content = `                      
+        <th scope="row">1</th>
+        <td class="table__productos">
+          <img class="card-img-top" src=${item.img} alt="${item.title}">
+          <h5>${item.title}</h5>
+        </td>
+        <td class="table__price">
+          <p>${item.precio}</p>
+        </td>
+        <td class="table__cantidad">
+        <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+        <button class="delete btn btn-danger">x</button>
+        </td>
+        `
+        tr.innerHTML = Content;
+        tBody.append(tr)
+    })
+        
+    }
+
+    function carritoTotal(){
+        let Total = 0;
+        const itemCarTotal = document.querySelector('.itemCartTotal')
+        carrito.forEach((item) => {
+          const precio = Number(item.precio.replace("$", ''))
+          Total = Total + precio
+        })
+
+        itemCartTotal.innerHTML = `Total $${Total}`
+    }
+
+    
+/*
     //Funcion seleccion de zapatillas 
     function seleccionZapatilla(){
-        zapatillaSeleccionada = prompt('Ingrese la marca de la zapatilla que quieres agregar al carrito \n Zapatilla nike - costo $6000 (nike) \nZapatilla adidas - costo $7000 (adidas) \nZapatilla puma - costo $8000 (puma) \nZapatilla vans - costo $9000 (vans)').toLowerCase()
-        if (zapatillaSeleccionada == 'nike'){
+        //zapatillaSeleccionada = prompt('Ingrese la marca de la zapatilla que quieres agregar al carrito \n Zapatilla nike - costo $6000 (nike) \nZapatilla adidas - costo $7000 (adidas) \nZapatilla puma - costo $8000 (puma) \nZapatilla vans - costo $9000 (vans)').toLowerCase()
+        if (itemTitle == 'Zapatilla Superstar'){
             let zapatillaSeleccionada1 = productos.find((el)=> el.nombre === 'nike')
             carrito.push(zapatillaSeleccionada1)
         }else if (zapatillaSeleccionada == 'adidas'){
@@ -74,4 +130,28 @@
     }while(accion != 'salir'){
         alert('Muchas gracias por comprar en MyShoes')
     }
+*/
 
+//Funcion render
+/*
+    tBody.innerHTML = ''
+    carrito.map(item =>{
+        const tr = document.createElement('tr')
+        tr.classList.add('itemCarrito')
+        const Content = `                      
+        <th scope="row">1</th>
+        <td class="table__productos">
+          <img src=${itemImg} alt="${itemTitle}">
+          <h4>${itemTitle}</h4>
+        </td>
+        <td class="table__price">
+          <p>$${itemPrice}</p></td>
+        <td class="table__cantidad">
+          <input type="number" min="1" value="1">
+          <button class="delete btn btn-danget">x</button>
+        </td>
+        `
+        tr.innerHTML = Content;
+        tBody.append(tr)
+    })
+        */

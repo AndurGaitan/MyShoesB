@@ -30,7 +30,9 @@
 /*Body home*/
 .bodyContenedor {
   display: grid;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-areas: "header"
+ "main"
+ "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   justify-content: center; }
@@ -127,7 +129,9 @@
 .contenedorProductos {
   height: 100vh;
   display: grid;
-  grid-template-areas: "headerC headerC" "mainProd mainProd"                       "footer footer";
+  grid-template-areas: "headerC headerC"
+ "mainProd mainProd"                      
+ "footer footer";
   grid-template-columns: 1fr 1fr;
   grid-template-rows: repeat(auto fell, 1fr);
   justify-content: center;
@@ -153,6 +157,13 @@
   .productosProduc img {
     width: 100%;
     height: 220px; }
+.table__cantidad > input {
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
 
 /*Stylo cards*/
 .card h2 {
@@ -225,7 +236,9 @@
 @media only screen and (min-width: 1024px) {
   .bodyContenedor {
     display: grid;
-    grid-template-areas: "header header header" "main main main" "footer footer footer";
+    grid-template-areas: "header header header"
+ "main main main"
+ "footer footer footer";
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr fr;
     justify-content: center; }
