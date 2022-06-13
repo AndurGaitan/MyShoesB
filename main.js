@@ -39,28 +39,28 @@
     function addItemCarrito(newItem){
     carrito.push(newItem)
     renderCarrito()
-}
+    }
 
-let destino = document.getElementById('contenedorNov')
-function renderCarrito(){
-    tBody.innerHTML = ''
-    carrito.map(item =>{
-        const tr = document.createElement('tr')
-        tr.classList.add('itemCarrito')
-        const Content = `                      
-        <th scope="row">1</th>
-        <td class="table__productos">
-          <img class="card-img-top" src=${item.img} alt="${item.title}">
-          <h5>${item.title}</h5>
-        </td>
-        <td class="table__price">
-          <p>${item.precio}</p>
-        </td>
-        <td class="table__cantidad">
-        <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-        <button class="delete btn btn-danger">x</button>
-        </td>
-        `
+    
+    function renderCarrito(){
+        tBody.innerHTML = ''
+        carrito.map(item =>{
+            const tr = document.createElement('tr')
+            tr.classList.add('itemCarrito')
+            const Content = `                      
+            <th scope="row">1</th>
+            <td class="table__productos">
+              <img class="card-img-top" src=${item.img} alt="${item.title}">
+              <h5>${item.title}</h5>
+            </td>
+            <td class="table__price">
+              <p>${item.precio}</p>
+            </td>
+            <td class="table__cantidad">
+            <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+            <button class="delete btn btn-danger">x</button>
+            </td>
+            `
         tr.innerHTML = Content;
         tBody.append(tr)
     })
@@ -71,8 +71,8 @@ function renderCarrito(){
         let Total = 0;
         const itemCarTotal = document.querySelector('.itemCartTotal')
         carrito.forEach((item) => {
-          const precio = Number(item.precio.replace("$", ''))
-          Total = Total + precio
+            const precio = Number(item.precio.replace("$", ''))
+            Total = Total + precio
         })
 
         itemCartTotal.innerHTML = `Total $${Total}`
