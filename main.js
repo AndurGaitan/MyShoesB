@@ -1,5 +1,9 @@
    //Variables
-    class zapatillas {
+   let carrito = []
+   const clickbutton = document.querySelectorAll('.button');
+   const tBody = document.querySelector('.tBody');
+   //Contructor zapatillas
+   class zapatillas {
         constructor(nombre,precio,imagen){
             this.nombre=nombre
             this.precio=precio
@@ -33,9 +37,7 @@
         destino.append(nuevoEle)
     }
 
-    let carrito = []
-    const clickbutton = document.querySelectorAll('.button');
-    const tBody = document.querySelector('.tBody');
+
     //Funcion de interaccion
     clickbutton.forEach(btn => {
         btn.addEventListener('click',addToCarritoItem)
@@ -100,7 +102,8 @@
     })
     carritoTotal()
     }
-
+    
+    //Funcion de calculo total carrito de compras
     function carritoTotal(){
         let Total = 0;
         const itemCartTotal = document.querySelector('.itemCartTotal')
@@ -113,6 +116,7 @@
         addLocalStorage()
     }
 
+    //Funcion almacenamiento local
     function addLocalStorage(){
         localStorage.setItem('carrito', JSON.stringify(carrito))
     }
