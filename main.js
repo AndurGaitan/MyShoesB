@@ -1,6 +1,5 @@
-   //Variables
+ //Contructor zapatillas
 
-   //Contructor zapatillas
    class zapatillas {
         constructor(nombre,precio,imagen){
             this.nombre=nombre
@@ -8,6 +7,7 @@
             this.imagen=imagen
         }
     }
+//Stock de zapatillas
 
     let zapatilla = [
         new zapatillas('Zapatillas Adidas SSstar',23000,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw1e1cd6b9/products/AD_EG4958/AD_EG4958-1.JPG?sw=400&sh=400'),
@@ -19,7 +19,8 @@
         new zapatillas('Zapatillas Puma Futouble',17500,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwd1e4c905/products/PU_380639-04/PU_380639-04-1.JPG?sw=400&sh=400'),
         new zapatillas('Zapatillas Puma Go Fores',21000,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwed8da300/products/PU_383355-02/PU_383355-02-1.JPG?sw=400&sh=400'),
     ]
-    
+//Creacion card 
+
     let destino = document.getElementById('contenedor')
     for(elemento of zapatilla){
         let nuevoEle = document.createElement('div')
@@ -34,17 +35,20 @@
                                 `
         destino.append(nuevoEle)
     }
+
     let carrito = [];
     const clickbutton = document.querySelectorAll('.button');
     const tBody = document.querySelector('.tBody');
 
-    //Funcion de interaccion
+//Funcion de interaccion
+
     clickbutton.forEach(btn => {
-        btn.addEventListener('click',addToCarritoItem)
+        btn.addEventListener('click',tomarArticulo) 
     })
 
-    //Funcion de agregar al carrito
-    function addToCarritoItem(e){
+//Funcion para tomar articulo
+
+    function tomarArticulo(e){ 
         const button = e.target
         const item = button.closest('.card')
         const itemTitle = item.querySelector('.card-title').textContent;
@@ -58,12 +62,12 @@
            cantidad: 1,
         }
 
-        addItemCarrito(newItem);
+        modificarCantidad(newItem); 
     }
     
-    //const InputElemnto = tbody.getElementsByClassName('input__elemento')
+//Funcion para modificar cantidad de articulos
 
-    function addItemCarrito(newItem){
+    function modificarCantidad(newItem){ 
     for(let i =0; i < carrito.length ; i++){
         if(carrito[i].title.trim() === newItem.title.trim()){
             carrito[i].cantidad ++;
@@ -74,11 +78,12 @@
         }
     }
     carrito.push(newItem)
-    renderCarrito()
+    agregarCarrito() 
     }
 
-    
-    function renderCarrito(){
+//Funcion para agregar articulos al carrito
+
+    function agregarCarrito(){  
         tBody.innerHTML = ''
         carrito.map(item =>{
             const tr = document.createElement('tr')
@@ -103,7 +108,8 @@
     carritoTotal()
     }
     
-    //Funcion de calculo total carrito de compras
+//Funcion para calcular el total del carrito de compras
+
     function carritoTotal(){
         let Total = 0;
         const itemCartTotal = document.querySelector('.itemCartTotal')
@@ -113,10 +119,11 @@
         })
 
         itemCartTotal.innerHTML = `Total $${Total}`
-        addLocalStorage()
+        agregarLocalStorage() 
     }
+//Funcion para almacenar en Local Storage
 
-    function addLocalStorage(){
+    function agregarLocalStorage(){ 
         localStorage.setItem('carrito', JSON.stringify(carrito))
     }
 
@@ -124,6 +131,6 @@
         const storage = JSON.parse(localStorage.getItem('carrito'));
         if(storage){
           carrito = storage;
-          renderCarrito()
+          agregarCarrito()  
         }
     }
