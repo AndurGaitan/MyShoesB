@@ -18,7 +18,11 @@
         new zapatillas('Zapatillas Nike Max Dawn',29000,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw5ecbea5c/products/NI_DH4656-001/NI_DH4656-001-1.JPG?sw=400&sh=400'),
         new zapatillas('Zapatillas Puma Futouble',17500,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwd1e4c905/products/PU_380639-04/PU_380639-04-1.JPG?sw=400&sh=400'),
         new zapatillas('Zapatillas Puma Go Fores',21000,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwed8da300/products/PU_383355-02/PU_383355-02-1.JPG?sw=400&sh=400'),
-    ]
+        new zapatillas('Zapatillas Vans Sk8',17900,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwb33c8991/products/VA_VN000D5IB8C/VA_VN000D5IB8C-1.JPG?sw=400&sh=400'),
+        new zapatillas('Zapatillas Nike ',25900,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwbcbd33f5/products/NI_DC2650-300/NI_DC2650-300-1.JPG?sw=400&sh=400'),
+        new zapatillas('Zapatillas Reebok ',12500,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwf8831b0e/products/RE_G55354/RE_G55354-1.JPG?sw=400&sh=400'),
+        new zapatillas('Zapatillas Vans Ultra',24000,'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw7888405a/products/VA_VN0A5HYS195/VA_VN0A5HYS195-1.JPG?sw=400&sh=400'),
+    ]   
 //Creacion card 
 
     let destino = document.getElementById('contenedor')
