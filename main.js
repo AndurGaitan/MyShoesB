@@ -1,7 +1,5 @@
    //Variables
-   let carrito = []
-   const clickbutton = document.querySelectorAll('.button');
-   const tBody = document.querySelector('.tBody');
+
    //Contructor zapatillas
    class zapatillas {
         constructor(nombre,precio,imagen){
@@ -25,18 +23,20 @@
     let destino = document.getElementById('contenedor')
     for(elemento of zapatilla){
         let nuevoEle = document.createElement('div')
-        nuevoEle.style = "width: 18rem"
-        nuevoEle.className = "card"
-        nuevoEle.innerHTML =  ` <img src="${elemento.imagen}" class="card-img-top" style="width: 16rem" alt="${elemento.nombre}">
+        nuevoEle.style = 'width: 18rem'
+        nuevoEle.className = 'card'
+        nuevoEle.innerHTML =  ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.nombre}">
                                 <div class="card-body">
                                     <h4 class="card-title">${elemento.nombre}</h4>
-                                    <p class="card-text precio fs-5">${elemento.precio}</p>
+                                    <p class="card-text precio fs-5">$${elemento.precio}</p>
                                     <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
                                 </div>
                                 `
         destino.append(nuevoEle)
     }
-
+    let carrito = [];
+    const clickbutton = document.querySelectorAll('.button');
+    const tBody = document.querySelector('.tBody');
 
     //Funcion de interaccion
     clickbutton.forEach(btn => {
@@ -50,7 +50,6 @@
         const itemTitle = item.querySelector('.card-title').textContent;
         const itemPrice = item.querySelector('.precio').textContent;
         const itemImg = item.querySelector('.card-img-top').src;
-
        
         const newItem = {
            title: itemTitle,
@@ -61,6 +60,8 @@
 
         addItemCarrito(newItem);
     }
+    
+    //const InputElemnto = tbody.getElementsByClassName('input__elemento')
 
     function addItemCarrito(newItem){
     for(let i =0; i < carrito.length ; i++){
@@ -93,7 +94,6 @@
             </td>
             <td class="table__cantidad">
             <input type="number" min="1" value=${item.cantidad} class="input__elemento">
-            <button class="delete btn btn-danger">x</button>
             </td>
             `
         tr.innerHTML = Content;
@@ -116,7 +116,6 @@
         addLocalStorage()
     }
 
-    //Funcion almacenamiento local
     function addLocalStorage(){
         localStorage.setItem('carrito', JSON.stringify(carrito))
     }
