@@ -66,7 +66,16 @@
            cantidad: 1,
         }
 
-        modificarCantidad(newItem); 
+        modificarCantidad(newItem);
+        Toastify({
+            text: 'Has sumado tu zapatilla al carrito de compras',
+            position:'right',
+            gravity:'top',
+            style: {
+                background: 'linear-gradient(90deg, rgba(95,255,0,0.8855917366946778) 0%, rgba(193,255,49,1) 49%, rgba(95,255,0,0.8995973389355743) 100%)'
+            }
+          }).showToast();
+          
     }
     
 //Funcion para modificar cantidad de articulos
