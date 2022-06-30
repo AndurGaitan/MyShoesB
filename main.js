@@ -1,4 +1,18 @@
- //Contructor zapatillas
+//Funcion para almacenar en Local Storage
+
+function agregarLocalStorage(){ 
+    localStorage.setItem('carrito', JSON.stringify(carrito))
+}
+
+window.onload = function(){
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if(storage){
+      carrito = storage;
+      agregarCarrito()  
+    }
+}
+
+//Contructor zapatillas
 
    class zapatillas {
         constructor(nombre,precio,imagen){
@@ -79,12 +93,12 @@
     }
     
 //Funcion para modificar cantidad de articulos
-
+    const inputElemnto = tBody.getElementsByClassName('input__elemento')
     function modificarCantidad(newItem){ 
     for(let i =0; i < carrito.length ; i++){
         if(carrito[i].title.trim() === newItem.title.trim()){
             carrito[i].cantidad ++;
-            const inputValue = InputElemnto[i]
+            const inputValue = inputElemnto[i]
             inputValue.value++;
         carritoTotal()
         return null;
@@ -100,26 +114,31 @@
         tBody.innerHTML = ''
         carrito.map(item =>{
             const tr = document.createElement('tr')
-            tr.classList.add('itemCarrito')
+            tr.className = 'itemCarrito'
             const Content = `                      
             <th scope="row">1</th>
             <td class="table__productos">
               <img class="card-img-top" src=${item.img} alt="${item.title}">
-              <h5>${item.title}</h5>
+              <h5 class="title">${item.title}</h5>
             </td>
             <td class="table__price">
               <p>${item.precio}</p>
             </td>
             <td class="table__cantidad">
             <input type="number" min="1" value=${item.cantidad} class="input__elemento">
+            <button class="delete btn btn-danger">x</button>
             </td>
             `
         tr.innerHTML = Content;
         tBody.append(tr)
 
+        tr.querySelector(".input__elemento").addEventListener('change', sumaCantidad)
+        tr.querySelector(".delete").addEventListener('click', eliminarItemCarrito) 
     })
     carritoTotal()
     }
+
+    
     
 //Funcion para calcular el total del carrito de compras
 
@@ -134,16 +153,34 @@
         itemCartTotal.innerHTML = `Total $${Total}`
         agregarLocalStorage() 
     }
-//Funcion para almacenar en Local Storage
+    
+ //Funcion para eliminar Item del carrito de compras   
 
-    function agregarLocalStorage(){ 
-        localStorage.setItem('carrito', JSON.stringify(carrito))
-    }
-
-    window.onload = function(){
-        const storage = JSON.parse(localStorage.getItem('carrito'));
-        if(storage){
-          carrito = storage;
-          agregarCarrito()  
+    function eliminarItemCarrito(e){
+        const buttonDelete = e.target
+        const tr = buttonDelete.closest(".itemCarrito")
+        const title = tr.querySelector('.title').textContent;
+        for(let i=0; i<carrito.length ; i++){
+      
+          if(carrito[i].title.trim() === title.trim()){
+            carrito.splice(i, 1)
+          }
         }
-    }
+        tr.remove()
+        carritoTotal()
+      }
+
+ //Funcion para sumar cantidad directamente del carrito 
+
+    function sumaCantidad(e){
+        const sumaInput  = e.target
+        const tr = sumaInput.closest(".itemCarrito")
+        const title = tr.querySelector('.title').textContent;
+        carrito.forEach(item => {
+          if(item.title.trim() === title){
+            sumaInput.value < 1 ?  (sumaInput.value = 1) : sumaInput.value;
+            item.cantidad = sumaInput.value;
+            carritoTotal()
+          }
+        })
+      }
