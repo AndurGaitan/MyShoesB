@@ -12,6 +12,27 @@ window.onload = function(){
     }
 }
 
+fetch('api.json')
+.then((resp) => resp.json() )
+.then((data) => {
+let destino = document.getElementById('contenedor')
+for(elemento of data){
+    let nuevoEle = document.createElement('div')
+    nuevoEle.style = 'width: 18rem'
+    nuevoEle.className = 'card'
+    nuevoEle.innerHTML =  ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.title}">
+                            <div class="card-body">
+                                <h4 class="card-title">${elemento.title}</h4>
+                                <p class="card-text precio fs-5">$${elemento.precio}</p>
+                                <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
+                            </div>
+                            `
+    destino.append(nuevoEle)
+
+}
+})
+
+/*
 //Contructor zapatillas
 
    class zapatillas {
@@ -53,7 +74,7 @@ window.onload = function(){
                                 `
         destino.append(nuevoEle)
     }
-
+*/
     let carrito = [];
     const clickbutton = document.querySelectorAll('.button');
     const tBody = document.querySelector('.tBody');
