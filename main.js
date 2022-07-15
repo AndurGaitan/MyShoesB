@@ -1,34 +1,35 @@
-const funcionPiola = async ()=>{
-    const res = await fetch('api.json')
-    const datos = await res.json()
-    let destino = document.getElementById('contenedor')
-        for (elemento of datos) {
-            let nuevoEle = document.createElement('div')
-            nuevoEle.style = 'width: 18rem'
-            nuevoEle.className = 'card'
-            nuevoEle.innerHTML = ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.nombre}">
-                            <div class="card-body">
-                                <h4 class="card-title">${elemento.nombre}</h4>
-                                <p class="card-text precio fs-5">$${elemento.precio}</p>
-                                <button href="#" class="btn btn-Novo button btnNuevo">Agregar al carrito</button>
-                            </div>
-                            `
-            destino.append(nuevoEle)
-        } 
-}
+//Stock de zapatillas desde json
 
-funcionPiola()
-
+fetch('api.json')
+    .then(res => res.json())
+    .then(datos => crearProductos(datos))
 
 let carrito = []
-const clickbutton = document.querySelectorAll('.button');
+let sectionContenedor = document.getElementById('contenedor')
 const tBody = document.querySelector('.tBody');
 
-//Funcion de interaccion
+// Interacion para mostrar card
 
-clickbutton.forEach(btn => {
-    btn.addEventListener('click', tomarArticulo)
-})
+let crearProductos = data => {
+    data.forEach(item => {
+        const nuevoEle = document.createElement('div')
+        nuevoEle.style = 'width: 18rem'
+        nuevoEle.className = 'card'
+        nuevoEle.innerHTML = ` <img src="${item.imagen}" class="card-img-top" alt="${item.nombre}">
+                        <div class="card-body">
+                            <h4 class="card-title">${item.nombre}</h4>
+                            <p class="card-text precio fs-5">$${item.precio}</p>
+                            <button href="#" class="btn btn-Novo button btnNuevo">Agregar al carrito</button>
+                        </div>
+                        `
+        sectionContenedor.appendChild(nuevoEle)
+    })
+}
+
+
+//Evento de interaccion
+
+sectionContenedor.addEventListener('click', tomarArticulo)
 
 //Funcion para tomar articulo
 
@@ -48,7 +49,7 @@ function tomarArticulo(e) {
 
     modificarCantidad(newItem);
     Toastify({
-        text: 'Has sumado tu zapatilla al carrito de compras',
+        text: 'Tu zapatilla fue agregada al carrito',
         position: 'right',
         gravity: 'top',
         style: {
@@ -164,108 +165,3 @@ window.onload = function () {
 }
 
 
-
-
-
-
-
-
-
-
-// const captiradorData = async() => {
-//     try{
-//        const res = await fetch('https://pokeapi.co/api/v2/pokemon/')
-//        const data = await res.json()
-//        console.log(data.results)
-//     }
-//     catch (error){
-//         console.log(error)
-//     }
-// }
-
-// captiradorData()
-// fetch('api.json')
-//     .then((resp) => resp.json())
-//     .then((data) => {
-//         console.log(data)
-//         let destino = document.getElementById('contenedor')
-//         for (elemento of data) {
-//             let nuevoEle = document.createElement('div')
-//             nuevoEle.style = 'width: 18rem'
-//             nuevoEle.className = 'card'
-//             nuevoEle.innerHTML = ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.title}">
-//                             <div class="card-body">
-//                                 <h4 class="card-title">${elemento.title}</h4>
-//                                 <p class="card-text precio fs-5">$${elemento.precio}</p>
-//                                 <button href="#" class="btn btn-Novo button btnNuevo">Agregar al carrito</button>
-//                             </div>
-//                             `
-//             destino.append(nuevoEle)
-
-//         }
-//     })
-
-
-//Contructor zapatillas
-
-// class zapatillas {
-//     constructor(nombre, precio, imagen) {
-//         this.nombre = nombre
-//         this.precio = precio
-//         this.imagen = imagen
-//     }
-// }
-// //Stock de zapatillas
-
-// let zapatilla = [
-//     new zapatillas('Zapatillas Adidas SSstar', 23000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw1e1cd6b9/products/AD_EG4958/AD_EG4958-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Fila Genation', 20000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw12fe972d/products/FI_1CM01569-019/FI_1CM01569-019-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Vans Oldskool', 16000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw3c758933/products/VA_VN000KW6HR0/VA_VN000KW6HR0-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Nike Crimpact', 25000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw36e6b507/products/NI_DB2477-300/NI_DB2477-300-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Nike Huarache', 29000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw50afdaec/products/NI_DD1068-003/NI_DD1068-003-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Nike Max Dawn', 29000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw5ecbea5c/products/NI_DH4656-001/NI_DH4656-001-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Puma Futouble', 17500, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwd1e4c905/products/PU_380639-04/PU_380639-04-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Puma Go Fores', 21000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwed8da300/products/PU_383355-02/PU_383355-02-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Vans Sk8', 17900, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwb33c8991/products/VA_VN000D5IB8C/VA_VN000D5IB8C-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Nike ', 25900, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwbcbd33f5/products/NI_DC2650-300/NI_DC2650-300-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Reebok ', 12500, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dwf8831b0e/products/RE_G55354/RE_G55354-1.JPG?sw=400&sh=400'),
-//     new zapatillas('Zapatillas Vans Ultra', 24000, 'https://www.moov.com.ar/dw/image/v2/BDTF_PRD/on/demandware.static/-/Sites-dabra-catalog/default/dw7888405a/products/VA_VN0A5HYS195/VA_VN0A5HYS195-1.JPG?sw=400&sh=400'),
-// ]
-
-// //Creacion card 
-// let destino = document.getElementById('contenedor')
-// for(elemento of zapatilla){
-//     let nuevoEle = document.createElement('div')
-//     nuevoEle.style = 'width: 18rem'
-//     nuevoEle.className = 'card'
-//     nuevoEle.innerHTML =  ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.nombre}">
-//                             <div class="card-body">
-//                                 <h4 class="card-title">${elemento.nombre}</h4>
-//                                 <p class="card-text precio fs-5">$${elemento.precio}</p>
-//                                 <button href="#" class="btn btn-Novo button">Agregar al carrito</button>
-//                             </div>
-//                             `
-//     destino.append(nuevoEle)
-// }
-
-//Funcion para traer stock de productos desde json.
-// fetch('api.json')
-//     .then((resp) => resp.json())
-//     .then((data) => {
-//         console.log(data)
-//         let destino = document.getElementById('contenedor')
-//         for (elemento of data) {
-//             let nuevoEle = document.createElement('div')
-//             nuevoEle.style = 'width: 18rem'
-//             nuevoEle.className = 'card'
-//             nuevoEle.innerHTML = ` <img src="${elemento.imagen}" class="card-img-top" alt="${elemento.title}">
-//                             <div class="card-body">
-//                                 <h4 class="card-title">${elemento.title}</h4>
-//                                 <p class="card-text precio fs-5">$${elemento.precio}</p>
-//                                 <button href="#" class="btn btn-Novo button btnNuevo">Agregar al carrito</button>
-//                             </div>
-//                             `
-//             destino.append(nuevoEle)
-
-//         }
-//     })
