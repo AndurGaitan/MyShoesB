@@ -172,7 +172,7 @@ formulario.addEventListener("submit",(e)=>{
                 headers: {'Content-type':'application/json;charset=UTF-8'},
             })
             .then((resp)=>resp.json())
-            .then((data)=>{resumenCompra.innerHTML = `<h5>Tus compra se a realizado con exito</h5>
+            .then((data)=>{resumenCompra.innerHTML = `<h5>Tu compra se a realizado con exito</h5>
             `
         });
     })
@@ -183,12 +183,22 @@ let finalizarBtn = document.getElementById('finalizarBtn');
 finalizarBtn.addEventListener("click", ()=>{
     fetch(URL+'/datoscomp.json')
     .then((resp)=>resp.json())
-    .then((data)=>{resumenCompra.innerHTML = `<p>El resumen de tu cuenta es el siguiente:</p>
-    <br>
-    <p>${JSON.stringify(data)}</p>`});
+    .then((data)=>{
+        const datosPersonas = Object.values(data).map(ele =>{
+            console.log(`Sus datos personales son: Apellido : ${ele.Apellido}`)
+            resumenCompra.innerHTML = `<p>El resumen de tu cuenta es el siguiente:</p>
+            <br>
+            <p>Compra a nombre de: ${ele.Apellido} ${ele.Nombre}</p>
+            <p>Direccion: ${ele.Direccion} ${ele.Numero}</p>
+            <p>Provincia: ${ele.Provincia}</p>
+            <p>Email: ${ele.Email}</p>
+            
+`
+        })
+        });
     });
 
-
+    // Object.values(data)
 (() => {
   'use strict'
 

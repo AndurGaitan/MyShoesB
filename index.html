@@ -151,50 +151,83 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="resumenCompra">
-        <form class="row g-3" id="formulario">
+        <form class="row g-3 needs-validation" id="formulario" novalidate>
           <div class="col-md-6">
             <label for="inputNombre01" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="inputNombre01">
+            <input type="text" class="form-control" id="inputNombre01" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
             <label for="inputApellido01" class="form-label">Apellido</label>
-            <input type="text" class="form-control" id="inputApellido01">
+            <input type="text" class="form-control" id="inputApellido01" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="email" class="form-control" id="inputEmail4"required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-9">
             <label for="inputAddress" class="form-label">Calle</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="Nombre de calle">
+            <input type="text" class="form-control" id="inputAddress" placeholder="Nombre de calle" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-3">
             <label for="inputAddressN" class="form-label">N°</label>
-            <input type="text" class="form-control" id="inputAddressN" placeholder="Altura">
+            <input type="text" class="form-control" id="inputAddressN" placeholder="Altura" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">Provincia</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
             <label for="inputCity" class="form-label">Ciudad</label>
-            <input type="text" class="form-control" id="inputCity">
+            <input type="text" class="form-control" id="inputCity" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-2">
             <label for="inputZip" class="form-label">CP</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="text" class="form-control" id="inputZip" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-12">
             <label for="inputTarjeta01" class="form-label">N° de tarjeta</label>
-            <input type="text" class="form-control" id="inputTarjeta01">
+            <input type="text" class="form-control" id="inputTarjeta01" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
             <label for="inputSeguridad01" class="form-label">N° Seg</label>
-            <input type="text" class="form-control" id="inputSeguridad01">
+            <input type="text" class="form-control" id="inputSeguridad01" required>
+            <div class="valid-feedback">
+              Tus datos son correctos
+            </div>
           </div>
           <div class="col-md-6">
           <label for="inputVencimiento01" class="form-label">Venc</label>
-          <input type="text" class="form-control" id="inputVencimiento01">
+          <input type="text" class="form-control" id="inputVencimiento01" required>
+          <div class="valid-feedback">
+            Tus datos son correctos
+          </div>
         </div>
           <div class="col-12">
             <button type="submit" class="btn btn-Novo">Pagar</button>
