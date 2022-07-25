@@ -151,6 +151,9 @@ function sumaCantidad(e) {
         }
     })
 }
+
+// Fomularios Datos 
+
 let nombreEntrada = document.getElementById('inputNombre01')
 let apellidoEntrada = document.getElementById('inputApellido01')
 let emailEntrada = document.getElementById('inputEmail4')
