@@ -130,14 +130,219 @@
                 <h4 class="itemCartTotal">Total: 0</h4>
               </div>
               <div class="col d-flex justify-content-end">
-                <button class="btn btn-Novo">COMPRAR</button>
+                <!-- <button class="btn btn-Novo btnCompr" id="comprarBtn">COMPRAR</button> -->
+                <button type="button" class="btn btn-Novo" id="comprarBtn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  COMPRAR
+                </button>
               </div>
             </div>
 
           </div>
         </div>
+        <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Ingrese datos de la compra</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="resumenCompra">
+        <form class="row g-3" id="formulario">
+          <div class="col-md-6">
+            <label for="inputNombre01" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre01">
+          </div>
+          <div class="col-md-6">
+            <label for="inputApellido01" class="form-label">Apellido</label>
+            <input type="text" class="form-control" id="inputApellido01">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4">
+          </div>
+          <div class="col-md-9">
+            <label for="inputAddress" class="form-label">Calle</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="Nombre de calle">
+          </div>
+          <div class="col-md-3">
+            <label for="inputAddressN" class="form-label">N°</label>
+            <input type="text" class="form-control" id="inputAddressN" placeholder="Altura">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Provincia</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="inputCity">
+          </div>
+          <div class="col-md-2">
+            <label for="inputZip" class="form-label">CP</label>
+            <input type="text" class="form-control" id="inputZip">
+          </div>
+          <div class="col-md-12">
+            <label for="inputTarjeta01" class="form-label">N° de tarjeta</label>
+            <input type="text" class="form-control" id="inputTarjeta01">
+          </div>
+          <div class="col-md-6">
+            <label for="inputSeguridad01" class="form-label">N° Seg</label>
+            <input type="text" class="form-control" id="inputSeguridad01">
+          </div>
+          <div class="col-md-6">
+          <label for="inputVencimiento01" class="form-label">Venc</label>
+          <input type="text" class="form-control" id="inputVencimiento01">
+        </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-Novo">Pagar</button>
+          </div>
+        </form>
+
+
+
+
+
+
+
+        <!-- <div class="formularioContenedor mt-3 mb-3">
+          <form class="row g-5 needs-validation" id="formulario" novalidate>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip01" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="validationTooltip01" placeholder="Ingrese su nombre" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip02" class="form-label">Apellido</label>
+                <input id="apellido "type="text" class="form-control" id="validationTooltip02" value="" placeholder="Ingrese su apellido" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div> -->
+              <!-- <div class="col-md-8 position-relative">
+                <label for="validationTooltipUsername" class="form-label">email</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                  <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <div class="invalid-tooltip">
+                      Elija un nombre de usuario único y válido.
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip03" class="form-label">Calle</label>
+                <input type="text" class="form-control" id="validationTooltip03" placeholder="Ingrese su calle" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip04" class="form-label">N°</label>
+                <input type="number" class="form-control" id="validationTooltip04" placeholder="N" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip05" class="form-label">Telefono</label>
+                <input type="number" class="form-control" id="validationTooltip05" placeholder="Telefono" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-9 position-relative">
+                <label for="validationTooltip06" class="form-label">Provincia</label>
+                <select class="form-select" id="validationTooltip06" required>
+                  <option selected disabled value="">Tucumán</option>
+                  <option value="Buenos Aires">Buenos Aires</option>
+                  <option value="Ciudad Autónoma de Buenos Aires">Ciudad Autónoma de Buenos Aires</option>
+                  <option value="Catamarca">Catamarca</option>
+                  <option value="Chaco">Chaco</option>
+                  <option value="Chubut">Chubut</option>
+                  <option value="Córdoba">Córdoba</option>
+                  <option value="Corrientes">Corrientes</option>
+                  <option value="Entre Ríos">Entre Ríos</option>
+                  <option value="Formosa">Formosa</option>
+                  <option value="Jujuy">Jujuy</option>
+                  <option value="La Pampa">La Pampa</option>
+                  <option value="La Rioja">La Rioja</option>
+                  <option value="Mendoza">Mendoza</option>
+                  <option value="Misiones">Misones</option>
+                  <option value="Neuquén">Neuquén</option>
+                  <option value="Río Negro">Río Negro</option>
+                  <option value="Salta">Salta</option>
+                  <option value="San Juan">San Juan</option>
+                  <option value="San Luis">San Luis</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Santa Fe">Santa Fe</option>
+                  <option value="Santiago del Estero">Santiago del Estero</option>
+                  <option value="Tierra del Fuego">Tierra del Fuego</option>
+                  <option value="Tucuman">Tucuman</option>
+                </select>
+                <div class="invalid-tooltip">
+                  Seleccione una privincia válida.
+                </div>
+              </div>
+              <div class="col-md-6 position-relative">
+                <label for="validationTooltip07" class="form-label">Ciudad</label>
+                <input type="text" class="form-control" id="validationTooltip07" required>
+                <div class="invalid-tooltip">
+                  Proporcione una ciudad válida.
+                </div>
+              </div>
+              <div class="col-md-3 position-relative">
+                <label for="validationTooltip08" class="form-label">CP</label>
+                <input type="text" class="form-control" id="validationTooltip08" required>
+                <div class="invalid-tooltip">
+                  Proporcione un código postal válido.
+                </div>
+              </div>
+              <div class="col-md-9 position-relative">
+                <label for="validationTooltip09" class="form-label">Ingrese el numero de su tarjeta</label>
+                <input type="number" class="form-control" id="validationTooltip09" placeholder="Numero de tarjeta" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-3 position-relative">
+                <label for="validationTooltip10" class="form-label">CS</label>
+                <input type="number" class="form-control" id="validationTooltip10" placeholder="Seg" required>
+                <div class="valid-tooltip">
+                  ¡Se ve bien!
+                </div>
+              </div>
+              <div class="col-md-9 position-relative">
+                <label for="validationTooltip11" class="form-label">Banco</label>
+                <select class="form-select" id="validationTooltip11" required>
+                  <option selected disabled value=""> Macro</option>
+                  <option value="Nacion">Nacion</option>
+                  <option value="Santander">Santander</option>
+                  <option value="Frances">Frances</option>
+                  <option value="Hipotecario">Hipotecario</option>
+                </select>
+                <div class="invalid-tooltip">
+                  Seleccione un Banco válido.
+                </div>
+              </div> -->
+              <!-- <div class="col-12">
+                <button class="btn btn-Novo" id="enviarBtn" type="submit">Pagar</button>
+              </div>
+            </form> -->
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">CANCELAR</button>-->
+        <button type="button" class="btn btn-Novo" id="finalizarBtn">FINALIZAR COMPRA</button> 
+      </div>
+    </div>
+  </div>
+</div>
+
     </main>
-    <!--Fin Main-->
+    <!--Fin Main
 
     <!--Comienzo Footer-->
     <footer class="footer">
@@ -180,6 +385,7 @@
     <!--Link JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="main.js"></script>
     </body>  
 </html>

@@ -8,6 +8,8 @@ let carrito = []
 let sectionContenedor = document.getElementById('contenedor')
 const tBody = document.querySelector('.tBody');
 
+
+
 // Interacion para mostrar card
 
 let crearProductos = data => {
@@ -149,6 +151,62 @@ function sumaCantidad(e) {
         }
     })
 }
+let nombreEntrada = document.getElementById('inputNombre01')
+let apellidoEntrada = document.getElementById('inputApellido01')
+let emailEntrada = document.getElementById('inputEmail4')
+let direccionEntrada = document.getElementById('inputAddress')
+let nEntrada = document.getElementById('inputAddressN')
+let provinciaEntrada = document.getElementById('inputCity')
+// let pasEntrada = document.getElementById('inputPassword4')
+let formulario = document.getElementById('formulario')
+let URL = 'https://apiform-c3816-default-rtdb.firebaseio.com/'
+
+// Funcion para enviar datos personales del formulario a Api rest
+
+formulario.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    // console.log(nombreEntrada.value,apellidoEntrada.value,emailEntrada.value,direccionEntrada.value,nEntrada.value,provinciaEntrada.value)
+    fetch(URL+`datoscomp.json`,{
+                method:'POST',
+                body:JSON.stringify({Nombre:nombreEntrada.value,Apellido:apellidoEntrada.value,Email:emailEntrada.value,Direccion:direccionEntrada.value,Numero:nEntrada.value,Provincia:provinciaEntrada.value}),
+                headers: {'Content-type':'application/json;charset=UTF-8'},
+            })
+            .then((resp)=>resp.json())
+            .then((data)=>{resumenCompra.innerHTML = `<h5>Tus compra se a realizado con exito</h5>
+            `
+        });
+    })
+
+ // Funcion para traer datos de la api rest
+
+let finalizarBtn = document.getElementById('finalizarBtn');
+finalizarBtn.addEventListener("click", ()=>{
+    fetch(URL+'/datoscomp.json')
+    .then((resp)=>resp.json())
+    .then((data)=>{resumenCompra.innerHTML = `<p>El resumen de tu cuenta es el siguiente:</p>
+    <br>
+    <p>${JSON.stringify(data)}</p>`});
+    });
+
+
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
 
 //Funcion para almacenar en Local Storage
 
