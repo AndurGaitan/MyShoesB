@@ -185,20 +185,22 @@ finalizarBtn.addEventListener("click", ()=>{
     .then((resp)=>resp.json())
     .then((data)=>{
         const datosPersonas = Object.values(data).map(ele =>{
-            console.log(`Sus datos personales son: Apellido : ${ele.Apellido}`)
-            resumenCompra.innerHTML = `<p>El resumen de tu cuenta es el siguiente:</p>
+            resumenCompra.innerHTML = `<p>Resumen de tu compra:</p>
             <br>
             <p>Compra a nombre de: ${ele.Apellido} ${ele.Nombre}</p>
             <p>Direccion: ${ele.Direccion} ${ele.Numero}</p>
             <p>Provincia: ${ele.Provincia}</p>
             <p>Email: ${ele.Email}</p>
-            
+            <br>
+            <p>${ele.Nombre} gracias por tu compra!</p>
+
 `
         })
         });
     });
 
-    // Object.values(data)
+// Validacion de formulario 
+
 (() => {
   'use strict'
 
