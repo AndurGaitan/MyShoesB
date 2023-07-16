@@ -32,7 +32,7 @@ Abre el archivo index.html en tu navegador web.
 
 ## Prueba la pagina web.
 Clickea en el siguiente link: 
-https://stately-dieffenbachia-f21d00.netlify.app/
+https://andurgaitan.github.io/MyShoesB/
 
 # Contacto
 Si tienes alguna pregunta o sugerencia relacionada con el proyecto, no dudes en contactarme. Puedes encontrarme en mi dirección de correo electrónico: andurgaitan@gmail.com
